@@ -1,0 +1,10 @@
+@import "../helpers/mixins";
+
+//  ==========================================================================
+//
+//  Include All Fonts
+//
+//  ==========================================================================
+@include declare-font-face('Open-Sans-Bold', '../assets/fonts/opensans-bold-webfont');
+@include declare-font-face('Open-Sans-Italic', '../assets/fonts/opensans-italic-webfont');
+@include declare-font-face('Open-Sans', '../assets/fonts/opensans-regular-webfont');

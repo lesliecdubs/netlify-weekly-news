@@ -1,0 +1,92 @@
+//  ======================================================================================================
+//
+//  Variables
+//
+//  ======================================================================================================
+
+//  Responsive Breakpoints
+//  --------------------------------------------------
+  $break-sm:           580px  !default;
+  $break-md:           768px  !default;
+  $break-lg:           1024px !default;
+  $break-xl:           1280px !default;
+
+//  Color
+//  --------------------------------------------------
+  // Neutrals
+  $white:              rgba(255,255,255,1) !default; // #FFFFFF
+  $black:              rgba(0,  0,  0  ,1) !default; // #000000
+
+  // Theme Colors
+  $dark:               rgba(14 ,30 ,37 ,1) !default; // #0e1e25
+  $pop:                rgba(0  ,173,159,1) !default; // #00ad9f
+  $neutral:            rgba(233,233,235,1) !default; // #e9ebeb
+  $bg:                 rgba(244,247,248,1) !default; // #f4f7f8
+
+//  Default Color Settings
+//  --------------------------------------------------
+  $body-bg:                 $bg         !default;
+  $default-txt-color:       $white      !default;
+  $placeholder-txt-color:   $neutral    !default;
+
+  $hr-color:                $neutral    !default;
+  $highlight:               $pop        !default;
+  $highlight-text:          $white      !default;
+
+//  Font Families
+//  --------------------------------------------------
+  $font-open-sans-bold:   'Open-Sans-Bold', 'Gill Sans MT', 'Gill Sans', Helvetica, Arial, sans-serif !default;
+  $font-open-sans-italic: 'Open-Sans-Italic', 'Gill Sans MT', 'Gill Sans', Helvetica, Arial, sans-serif !default;
+  $font-open-sans:        'Open-Sans', 'Gill Sans MT', 'Gill Sans', Helvetica, Arial, sans-serif !default;
+
+
+// TODO: finish setting up vars file
+//  Font Stacks
+//  --------------------------------------------------
+  $font-bold:               $font-alright-ultra  !default;
+  $font-regular:            $font-proxima-nova   !default;
+  $font-italic:             $font-leitura-italic !default;
+  $font-family-default:     $font-regular        !default;
+
+//  Type Sizes (use rem mixin to apply)
+//  --------------------------------------------------
+  $font-size-root:          63%                !default;
+  $font-size-base:          1rem               !default;
+
+//  Defaults
+//  --------------------------------------------------
+  $font-weight-default:     normal               !default;
+  $line-height-base:        1.5                  !default;
+
+//  Headings
+//  --------------------------------------------------
+  // $headings-font-family:    $font-bold           !default;
+  // $headings-font-weight:    normal               !default;
+  // $headings-line-height:    $line-height-base    !default;
+  // $headings-font-color:     $white               !default;
+
+//  Blockquotes
+//  --------------------------------------------------
+  $blockquote-font-family:  $font-family-default !default;
+  $blockquote-txt-size:     $font-size-base      !default;
+  $blockquote-txt-color:    $default-txt-color   !default;
+
+//  Links
+//  --------------------------------------------------
+  $link-color:              $black               !default;
+  $link-hover-color:        rgba($black, 0.7)    !default;
+
+//  Forms
+//  --------------------------------------------------
+  $font-family-form:        $font-family-default !default;
+  $font-family-label:       $font-family-default !default;
+
+//  Animation
+//  --------------------------------------------------
+  $default-animation:        all 0.3s             !default;
+  $default-animation-duration:   0.3s             !default;
+
+//  Layout
+//  --------------------------------------------------
+  $max-width:     1440px !default;
+  $max-width-nav: 1600px !default;

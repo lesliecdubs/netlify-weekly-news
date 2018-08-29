@@ -1,0 +1,41 @@
+{
+  "name": "netlify-weekly-news",
+  "description": "Netlify dashboard of weekly activity",
+  "version": "1.0.0",
+  "author": "Leslie Cohn-Wein <leslie@cohnwein.com>",
+  "dependencies": {
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-sass": "^1.0.26",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-json": "^1.0.20",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build && yarn insert-attribution",
+    "start": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "insert-attribution": "find ./public -type f -name '*.html' | xargs perl -0777 -p -i -e 's/^/<!--  ---------------------------------------------------------------------------  --><!--    Site Designed and Developed by Leslie Cohn-Wein    --><!--  ---------------------------------------------------------------------------  -->/'"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-stage-0": "^6.24.1",
+    "prettier": "^1.13.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lesliecdubs/netlify-weekly-news"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ]
+  }
+}
