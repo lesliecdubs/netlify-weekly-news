@@ -32,69 +32,6 @@
   }
 }
 
-// Sizing shortcuts
-@mixin size($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-@mixin square($size) {
-  @include size($size, $size);
-}
-
-@mixin square-responsive() {
-  width: 100%;
-
-  &:after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-  }
-}
-
-// --------------------------------------------------
-// Positioning
-// --------------------------------------------------
-@mixin center-all($top: 50%, $right: 0, $bottom: 0, $left: 0){
-  left: $left;
-  margin: auto;
-  position: absolute;
-  right: $right;
-  top: $top;
-  transform: translateY(-$top);
-}
-
-@mixin center-vert($top: 50%, $bottom: 0){
-  margin: auto;
-  position: absolute;
-  top: $top;
-  transform: translateY(-$top);
-}
-
-@mixin center-horz($right: 0, $left: 0){
-  left: $left;
-  margin: auto;
-  position: absolute;
-  right: $right;
-}
-
-// ------------------------------------------------
-// Aspect ratio
-// ------------------------------------------------
-@mixin aspect-ratio($width: 16, $height: 9) {
-  height: 0;
-  position: relative;
-  @include aspect-ratio-override($width, $height);
-
-  > * {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
 // ------------------------------------------------
 // Font Styles
 // ------------------------------------------------
@@ -104,12 +41,6 @@
   font-smoothing: antialiased;
 }
 
-@mixin truncate-text() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 //  Set combined font size & line height
 @mixin font-line-height-px($fontSize, $pixelLineHeight) {
   font-size: $fontSize + px;
@@ -117,29 +48,11 @@
   line-height: ($pixelLineHeight / $fontSize);
 }
 
-// Photoshop to CSS letter spacing calcuation
-@mixin letter-spacing($spacingValue) {
-  letter-spacing: ($spacingValue / 1000) + em;
-}
-
 // ------------------------------------------------
 // Gradients
 // ------------------------------------------------
-@mixin linear-gradient($direction, $color1, $color2) {
-  background: linear-gradient(to $direction, $color1 0%, $color2 100%);
-}
-
-@mixin linear-gradient-hover($direction, $color1, $color2) {
-  background: linear-gradient(to $direction, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
-  transition: all $default-animation-duration ease-in-out;
-
-  @if $direction == 'bottom' or 'top' {
-    background-size: 100% 200%;
-    background-position: 0% 200%;
-  } @else {
-    background-size: 200% 100%;
-    background-position: 100%;
-  }
+@mixin linear-gradient($direction, $colors...) {
+  background: linear-gradient(to $direction, $colors);
 }
 
 // --------------------------------------------------
@@ -154,47 +67,6 @@ $breakpoints: (
 
 @mixin breakpoint($name) {
   @media #{inspect(map-get($breakpoints, $name))} {
-    @content;
-  }
-}
-
-// --------------------------------------------------
-// Break out style so it only applies to non-touch devices
-// --------------------------------------------------
-// 'state' applies to a specific action, like :hover, :active, :focus
-@mixin no-touch($state: "") {
-  @if $state != "" {
-    @at-root .no-touch #{& + $state} {
-      @content;
-    }
-  } @else {
-    @at-root .no-touch #{&} {
-      @content;
-    }
-  }
-}
-
-@mixin touch($state: "") {
-  @if $state != "" {
-    @at-root .touch #{& + $state} {
-      @content;
-    }
-  } @else {
-    @at-root .touch #{&} {
-      @content;
-    }
-  }
-}
-
-// --------------------------------------------------
-// Retina Media Query
-// --------------------------------------------------
-@mixin retina() {
-  @media (-webkit-min-device-pixel-ratio: 2),
-         (-moz-min-device-pixel-ratio: 2),
-         (-o-min-device-pixel-ratio: 3/2),
-         (min-device-pixel-ratio: 2),
-         (min-resolution: 192dpi) {
     @content;
   }
 }

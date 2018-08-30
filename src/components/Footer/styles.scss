@@ -1,0 +1,14 @@
+@import '../../stylesheets/helpers/variables';
+@import '../../stylesheets/helpers/mixins';
+
+//  ==========================================================================
+//
+//  Footer Styles
+//
+//  ==========================================================================
+.footer__copyright {
+  color: $utility;
+  margin-left: 10px;
+
+  @include breakpoint(sm) { margin-bottom: 15px; }
+}

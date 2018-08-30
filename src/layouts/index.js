@@ -1,44 +1,56 @@
-import React from 'react'
+//  ==========================================================================
+//
+//  Page Layout
+//
+//  ==========================================================================
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
-import './index.css'
+import {
+  Header,
+  Footer
+} from '../components'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+import '../stylesheets/global.scss'
 
-Layout.propTypes = {
-  children: PropTypes.func,
+export default class RawApp extends Component {
+  static propTypes = {
+    children: PropTypes.func
+  }
+
+  render() {
+    const {title, description} = this.props.data.site.siteMetadata
+
+    return (
+      <div className="page">
+        <div className="page__contents">
+          <Helmet
+            title={title}
+            meta={[{
+              name: 'description',
+              content: description
+            }]}
+          />
+          <Header userName="lesliecw" />
+          <main className="main container">
+            <div className="main__wrapper">
+              {this.props.children()}
+            </div>
+          </main>
+        </div>
+        <Footer />
+      </div>
+    )
+  }
 }
-
-export default Layout
 
 export const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

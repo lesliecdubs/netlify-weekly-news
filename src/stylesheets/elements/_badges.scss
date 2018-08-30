@@ -1,0 +1,27 @@
+//  ==========================================================================
+//
+//  Badges
+//
+//  ==========================================================================
+.badge-wrapper { position: relative; }
+
+.badge {
+  border-radius: 3px;
+  margin-left: 8px;
+  padding: 2px 4px;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  white-space: nowrap;
+
+  @include breakpoint(md) {
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  &--beta {
+    background-color: $alert;
+    color: $dark;
+    @include font-line-height-px(12, 16);
+  }
+}

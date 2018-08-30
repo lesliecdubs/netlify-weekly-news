@@ -1,0 +1,42 @@
+@import '../../stylesheets/helpers/variables';
+@import '../../stylesheets/helpers/mixins';
+
+//  ==========================================================================
+//
+//  Header Styles
+//
+//  ==========================================================================
+.site-header {
+  @include breakpoint(lg) { padding-bottom: 120px; }
+}
+
+.site-info {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  padding-bottom: 12px;
+  position: relative;
+
+  &::after {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    opacity: 0.08;
+    position: absolute;
+    width: 100%;
+    @include linear-gradient(
+      right,
+      rgba($white, 0) 0,
+      $white 5%,
+      $white 90%,
+      rgba($white, 0) 100%
+    );
+  }
+}
+
+.site-info__username {
+  font-family: $font-bold;
+  margin-left: 10px;
+  @include font-line-height-px(22, 22);
+}
