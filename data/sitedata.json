@@ -1,138 +1,150 @@
 [
   {
-    "date": "2018-09-04",
+    "date": "09-04-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 6723,
-        "deploys": 3
+        "deploys": 3,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 12239,
-        "deploys": 22
+        "deploys": 22,
+        "events": [
+          "New form 'Sign up for Smashing Conf New York' created"
+        ]
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 9213,
-        "deploys": 0
+        "deploys": 0,
+        "events": [
+          "Build environment variable 'FB_APP_ID' added",
+          "Build hook 'WordPress Publish' added"
+        ]
       }
     ]
   }, {
-    "date": "2018-09-03",
+    "date": "09-03-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 3002,
-        "deploys": 7
+        "deploys": 7,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 15239,
-        "deploys": 5
+        "deploys": 5,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 10238,
-        "deploys": 1
+        "deploys": 1,
+        "events": []
       }
     ]
   }, {
-    "date": "2018-09-02",
+    "date": "09-02-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 3137,
-        "deploys": 7
+        "deploys": 7,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 12063,
-        "deploys": 5
+        "deploys": 5,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 5160,
-        "deploys": 1
+        "deploys": 1,
+        "events": []
       }
     ]
   }, {
-    "date": "2018-09-01",
+    "date": "09-01-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 1174,
-        "deploys": 3
+        "deploys": 3,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 9200,
-        "deploys": 6
+        "deploys": 6,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 8675,
-        "deploys": 2
+        "deploys": 2,
+        "events": []
       }
     ]
   }, {
-    "date": "2018-08-31",
+    "date": "08-31-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 4715,
-        "deploys": 4
+        "deploys": 4,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 14828,
-        "deploys": 22
+        "deploys": 22,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 624,
-        "deploys": 2
+        "deploys": 2,
+        "events": []
       }
     ]
   }, {
-    "date": "2018-08-30",
+    "date": "08-30-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 6415,
-        "deploys": 3
+        "deploys": 3,
+        "events": [
+          "Site protected with new global password",
+          "New form 'New user 'lesliecw' added to team"
+        ]
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 10206,
-        "deploys": 6
+        "deploys": 6,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 6987,
-        "deploys": 0
+        "deploys": 0,
+        "events": []
       }
     ]
   }, {
-    "date": "2018-08-29",
+    "date": "08-29-2018",
     "data": [
       {
-        "site": "alistapart",
+        "site": "a_list_apart",
         "pageviews": 5609,
-        "deploys": 1
+        "deploys": 1,
+        "events": []
       }, {
-        "site": "smashingmag",
+        "site": "smashing_magazine",
         "pageviews": 9932,
-        "deploys": 8
+        "deploys": 8,
+        "events": []
       }, {
-        "site": "syntaxfm",
+        "site": "syntax",
         "pageviews": 8731,
-        "deploys": 7
-      }
-    ]
-  }, {
-    "date": "2018-08-28",
-    "data": [
-      {
-        "site": "alistapart",
-        "pageviews": 3938,
-        "deploys": 1
-      }, {
-        "site": "smashingmag",
-        "pageviews": 9244,
-        "deploys": 6
-      }, {
-        "site": "syntaxfm",
-        "pageviews": 3741,
-        "deploys": 0
+        "deploys": 7,
+        "events": []
       }
     ]
   }

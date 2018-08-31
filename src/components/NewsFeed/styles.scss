@@ -1,0 +1,42 @@
+@import '../../stylesheets/helpers/variables';
+@import '../../stylesheets/helpers/mixins';
+
+//  ==========================================================================
+//
+//  Styles
+//
+//  ==========================================================================
+.news-group {
+  margin: 40px 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: -20px;
+    width: 70%;
+    @include linear-gradient(
+      right,
+      $color-bg 0,
+      $color-white 5%,
+      $color-white 90%,
+      $color-bg 100%
+    );
+  }
+}
+
+.news__date {
+  color: $color-utility;
+  margin-bottom: 7px;
+}
+
+.news__date__site-group { margin-bottom: 10px; }
+
+.news__date__site__event {
+  margin: 3px 0;
+  max-width: 100%;
+  @include font-line-height-px(14, 18);
+}

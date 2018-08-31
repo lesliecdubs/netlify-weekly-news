@@ -153,6 +153,19 @@ h2 {
   }
 }
 
+h3 {
+  @include font-line-height-px(12, 16);
+
+  @include breakpoint(md) {
+    @include font-line-height-px(16, 20);
+  }
+}
+
+h4 {
+  font-family: $font-regular;
+  @include font-line-height-px(14, 18);
+}
+
 // --------------------------------------------------
 // Body text elements
 // --------------------------------------------------

@@ -12,27 +12,36 @@ export default class ChartPie extends Component {
     data: PropTypes.array.isRequired
   }
 
-  render() {
-    return (
-      <AmCharts.React
-        style={{ width: "100%", height: "300px" }}
-        options={this._config}
-      />
-    )
+  componentDidMount() {
+    AmCharts.makeChart('chart-pie', {
+      "type": "pie",
+      "theme": "light",
+      "alpha": 0.7,
+      "dataProvider": this.props.data,
+      "valueField": "deploys",
+      "titleField": "site",
+      "colorField": "color",
+      "startDuration": 0,
+      "innerRadius": 40,
+      "pullOutRadius": 20,
+      "marginTop": 30,
+      "hideCredits": true,
+      "responsive": {
+        "enabled": true
+      },
+      "export": {
+        "enabled": true
+      }
+    })
   }
 
-  _config = {
-    "type": "pie",
-    "theme": "light",
-    "dataProvider": this.props.data,
-    "valueField": "deploys",
-    "titleField": "site",
-    "startDuration": 0,
-    "innerRadius": 40,
-    "pullOutRadius": 20,
-    "marginTop": 30,
-    "export": {
-      "enabled": true
-    }
+  render() {
+    return (
+      <div
+        id="chart-pie"
+        style={{ width: "100%", height: "300px" }}
+      >
+      </div>
+    )
   }
 }

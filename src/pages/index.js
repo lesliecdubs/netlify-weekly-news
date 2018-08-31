@@ -5,13 +5,23 @@
 //  ==========================================================================
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {normalizeDate} from '../helpers'
-import {flatten, groupBy, startCase} from 'lodash'
+import {colors} from '../helpers'
+
+import {
+  determineTotalDeploysBySite,
+  normalizeDate
+} from '../helpers'
+
+import {
+  flatten,
+  startCase
+} from 'lodash'
 
 import {
   ChartLine,
   ChartPie,
   Link,
+  NewsFeed,
   Section
 } from '../components'
 
@@ -24,7 +34,11 @@ export default class IndexPage extends Component {
     super(props)
     this._siteData = props.data.allSitedataJson.edges.map(normalizeDate)
 
-    // format data from API as required for line chart
+    // get dates from data for display
+    this._latestDayWithData = this._siteData[0].date
+    this._oldestDayWithData = this._siteData[this._siteData.length - 1].date
+
+    // pageview data: format data from API as required for line chart
     this._sitePageviews = this._siteData.map(dateGroup =>
       dateGroup.data.map(siteInfo => (
         {
@@ -36,35 +50,29 @@ export default class IndexPage extends Component {
       }, {})
     )
 
-    const siteDeploys = flatten(this._siteData.map(dateGroup =>
-      dateGroup.data.map(siteInfo => (
-        {
-          "site": siteInfo.siteName,
-          "deploys": siteInfo.deploys
-        })
-      )
-    ))
+    // deploy data: format data from API as required for pie chart
+    this._siteDeploys = determineTotalDeploysBySite(
+      flatten(this._siteData.map(dateGroup =>
+        dateGroup.data.map(siteInfo => (
+          {
+            "site": startCase(siteInfo.siteName),
+            "deploys": siteInfo.deploys
+          })
+        )
+      ))
+    ).map((siteDeployData, i) => {
+      // add appropriate color property to each object
+      const o = Object.assign({}, siteDeployData)
+      o.color = Object.values(colors)[i]
+      return o
+    })
 
-    const combineSites = data => {
-      let cominbator = {}
-
-      data.forEach(el => {
-        cominbator[el.site] = (cominbator[el.site])
-          ? cominbator[el.site] += +el.deploys
-          : +el.deploys
-        }
-      )
-
-      return Object.keys(cominbator).map(el => {
-        return {
-          site: el,
-          deploys: cominbator[el]
-        }
+    // events: format data from API as needed for news feed
+    this._siteEvents = this._siteData.filter((dateGroup) => {
+      return dateGroup.data.some((site) => {
+        return site.events.length > 0
       })
-    }
-
-    this._deploys = combineSites(siteDeploys)
-    console.log(this._deploys);
+    })
   }
 
   render() {
@@ -76,6 +84,7 @@ export default class IndexPage extends Component {
               <span>Weekly Activity News</span>
               <sup className="badge badge--beta">beta</sup>
             </h1>
+            <p>{this._oldestDayWithData} - {this._latestDayWithData}</p>
             <p className="lead">Looks like you've had a busy week! Catch up on your stats from the past seven days.</p>
             <p>If there's a specific statistic you'd like to see here, let us know. This dashboard is for you.</p>
             <p>
@@ -96,14 +105,19 @@ export default class IndexPage extends Component {
         </div>
 
         <div className="section-blocks">
-          <Section title="Most Active Sites">
-            <ChartPie data={this._deploys} />
+          <Section
+            title="Activity By Deploys"
+            description="Where has all your time gone? See which sites are most active based on the number of deploys over the past week."
+          >
+            <ChartPie data={this._siteDeploys} />
           </Section>
 
-          <Section title="Noteworthy Events">
-            <p>news feed, half width</p>
+          <Section
+            title="Noteworthy Events"
+            description="Catch up on all the Netlify account updates that occurred on your sites this week."
+          >
+            <NewsFeed data={this._siteEvents} />
           </Section>
-
         </div>
       </div>
     )
@@ -120,6 +134,7 @@ export const IndexQuery = graphql`
             site
             pageviews
             deploys
+            events
           }
         }
       }

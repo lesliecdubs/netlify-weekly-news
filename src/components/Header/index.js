@@ -5,8 +5,12 @@
 //  ==========================================================================
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import {Nav} from '..'
+
+import {
+  Link,
+  Nav
+} from '..'
+
 import {Logomark} from '../../assets/images'
 
 import './styles.scss'

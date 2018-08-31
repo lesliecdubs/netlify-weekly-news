@@ -1,12 +1,18 @@
-const formatDate = date => date[1] +'/'+ date[2] +'/'+ date[0]
+const stripLeadingZerosFromDate = date => {
+  console.log(date)
+  return date.split('-').reduce((date, datePart) => {
+    return date += parseInt(datePart) + '/'
+  }, '').slice(0, -1)
+}
 
 const normalizeDateData = data => ({
   siteName: data.site,
   pageviews: data.pageviews,
-  deploys: data.deploys
+  deploys: data.deploys,
+  events: data.events
 })
 
 export const normalizeDate = site => ({
-  date: formatDate(site.node.date.split('-')),
+  date: stripLeadingZerosFromDate(site.node.date),
   data: site.node.data.map(normalizeDateData)
 })

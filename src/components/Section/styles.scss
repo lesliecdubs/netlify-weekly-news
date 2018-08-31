@@ -7,19 +7,33 @@
 //
 //  ==========================================================================
 .section-blocks {
+  margin-bottom: 60px;
+
   @include breakpoint(md) {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
 
-  section {
-    margin-bottom: 30px;
-
+  .section {
     @include breakpoint(md) {
       flex: 1;
-      max-width: 47%;
       margin-bottom: 50px;
+      max-width: 47%;
     }
+  }
+
+  .section__description { max-width: 440px; }
+}
+
+section {
+  padding: 0 16px;
+  margin-bottom: 30px;
+
+  @include breakpoint(md) {padding: 0; }
+
+  p {
+    color: $color-utility;
+    margin-top: 10px;
   }
 }
