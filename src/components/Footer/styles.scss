@@ -7,8 +7,9 @@
 //
 //  ==========================================================================
 .footer__copyright {
-  color: $utility;
+  color: $color-utility;
   margin-left: 10px;
+  opacity: 0.4;
 
   @include breakpoint(sm) { margin-bottom: 15px; }
 }

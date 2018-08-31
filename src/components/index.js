@@ -1,4 +1,7 @@
+export {default as ChartLine} from './ChartLine'
+export {default as ChartPie} from './ChartPie'
 export {default as Footer} from './Footer'
 export {default as Header} from './Header'
 export {default as Link} from './Link'
 export {default as Nav} from './Nav'
+export {default as Section} from './Section'

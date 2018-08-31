@@ -1,0 +1,139 @@
+[
+  {
+    "date": "2018-09-04",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 6723,
+        "deploys": 3
+      }, {
+        "site": "smashingmag",
+        "pageviews": 12239,
+        "deploys": 22
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 9213,
+        "deploys": 0
+      }
+    ]
+  }, {
+    "date": "2018-09-03",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 3002,
+        "deploys": 7
+      }, {
+        "site": "smashingmag",
+        "pageviews": 15239,
+        "deploys": 5
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 10238,
+        "deploys": 1
+      }
+    ]
+  }, {
+    "date": "2018-09-02",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 3137,
+        "deploys": 7
+      }, {
+        "site": "smashingmag",
+        "pageviews": 12063,
+        "deploys": 5
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 5160,
+        "deploys": 1
+      }
+    ]
+  }, {
+    "date": "2018-09-01",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 1174,
+        "deploys": 3
+      }, {
+        "site": "smashingmag",
+        "pageviews": 9200,
+        "deploys": 6
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 8675,
+        "deploys": 2
+      }
+    ]
+  }, {
+    "date": "2018-08-31",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 4715,
+        "deploys": 4
+      }, {
+        "site": "smashingmag",
+        "pageviews": 14828,
+        "deploys": 22
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 624,
+        "deploys": 2
+      }
+    ]
+  }, {
+    "date": "2018-08-30",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 6415,
+        "deploys": 3
+      }, {
+        "site": "smashingmag",
+        "pageviews": 10206,
+        "deploys": 6
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 6987,
+        "deploys": 0
+      }
+    ]
+  }, {
+    "date": "2018-08-29",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 5609,
+        "deploys": 1
+      }, {
+        "site": "smashingmag",
+        "pageviews": 9932,
+        "deploys": 8
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 8731,
+        "deploys": 7
+      }
+    ]
+  }, {
+    "date": "2018-08-28",
+    "data": [
+      {
+        "site": "alistapart",
+        "pageviews": 3938,
+        "deploys": 1
+      }, {
+        "site": "smashingmag",
+        "pageviews": 9244,
+        "deploys": 6
+      }, {
+        "site": "syntaxfm",
+        "pageviews": 3741,
+        "deploys": 0
+      }
+    ]
+  }
+]

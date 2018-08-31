@@ -1,0 +1,27 @@
+@import '../../stylesheets/helpers/variables';
+@import '../../stylesheets/helpers/mixins';
+
+//  ==========================================================================
+//
+//  Links
+//
+//  ==========================================================================
+.action-link {
+  font-family: $font-bold;
+  color: $color-pop;
+  font-weight: bold;
+  position: relative;
+
+  &::after {
+    bottom: 3px;
+    content: '\2192';
+    margin-left: 8px;
+    position: absolute;
+    @include font-line-height-px(19, 19);
+  }
+
+  &:hover {
+    color: $color-pop;
+    text-decoration: underline;
+  }
+}

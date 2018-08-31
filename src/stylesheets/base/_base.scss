@@ -111,11 +111,18 @@ figure {
 }
 
 hr {
-  background: $hr-color;
   border: none;
   box-sizing: content-box;
   display: block;
-  height: 1px;
+  height: 2px;
+  margin: 30px 0 35px 0;
+  @include linear-gradient(
+    right,
+    $color-white 0,
+    $color-bg 5%,
+    $color-bg 90%,
+    $color-white 100%
+  );
 }
 
 // --------------------------------------------------
@@ -132,9 +139,17 @@ h6 {
   font-weight: $headings-font-weight;
   margin: 0;
   line-height: $headings-line-height;
+}
 
+h1 {
   @include breakpoint(md) {
     @include font-line-height-px(36, 40);
+  }
+}
+
+h2 {
+  @include breakpoint(md) {
+    @include font-line-height-px(24, 30);
   }
 }
 
@@ -142,7 +157,7 @@ h6 {
 // Body text elements
 // --------------------------------------------------
 p {
-  color: $black;
+  color: $color-black;
   font-size: 16px;
   margin: 0;
   orphans: 2;
@@ -150,7 +165,7 @@ p {
 }
 
 blockquote {
-  color: $black;
+  color: $color-black;
   display: block;
   font-family: $font-regular;
   margin: 0;
@@ -266,7 +281,7 @@ select {
 
 select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 $white;
+  text-shadow: 0 0 0 $color-white;
 }
 
 a, div, span, p, em, strong, a {

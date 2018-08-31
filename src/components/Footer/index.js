@@ -3,17 +3,16 @@
 //  Footer
 //
 //  ==========================================================================
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import {kebabCase} from 'lodash'
-
 import {footerRoutes} from '../../helpers'
 import {Link} from '..'
 
 import './styles.scss'
 
 const Footer = () => (
-  <footer>
+  <footer className="site-footer">
     <div className="container">
       <nav>
         <ul>

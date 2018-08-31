@@ -1,0 +1,25 @@
+@import '../../stylesheets/helpers/variables';
+@import '../../stylesheets/helpers/mixins';
+
+//  ==========================================================================
+//
+//  Sections
+//
+//  ==========================================================================
+.section-blocks {
+  @include breakpoint(md) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  section {
+    margin-bottom: 30px;
+
+    @include breakpoint(md) {
+      flex: 1;
+      max-width: 47%;
+      margin-bottom: 50px;
+    }
+  }
+}

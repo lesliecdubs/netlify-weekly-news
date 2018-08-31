@@ -6,6 +6,8 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
 
+import './styles.scss'
+
 const Link = ({ children, to, ...other }) => {
   const internal = /^\/(?!\/)/.test(to); // assumes all internal links start with a slash
 

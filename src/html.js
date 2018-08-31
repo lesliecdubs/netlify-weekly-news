@@ -38,6 +38,13 @@ export default class HTML extends React.Component {
           <link rel="apple-touch-icon-precomposed" sizes="180x180" href={ faviconAppleTouch180 } />
           <link rel="icon" type="image/png" href={ favicon32 } sizes="32x32" />
           <link rel="icon" type="image/png" href={ favicon16 } sizes="16x16" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/plugins/export/export.css" />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/amcharts.js" type="text/javascript"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/pie.js" type="text/javascript"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/serial.js" type="text/javascript"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/themes/light.js" type="text/javascript"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/plugins/export/export.min.js" type="text/javascript"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.13/plugins/responsive/responsive.min.js" type="text/javascript"></script>
           {css}
           {this.props.headComponents}
         </head>

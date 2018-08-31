@@ -14,26 +14,25 @@
 //  Color
 //  --------------------------------------------------
   // Neutrals
-  $white:    rgba(255,255,255,1) !default; // #FFFFFF
-  $black:    rgba(0,  0,  0  ,1) !default; // #000000
+  $color-white:    rgba(255,255,255,1) !default; // #FFFFFF
+  $color-black:    rgba(0,  0,  0  ,1) !default; // #000000
 
   // Theme Colors
-  $dark:     rgba(14 ,30 ,37 ,1) !default; // #0e1e25
-  $pop:      rgba(0  ,173,159,1) !default; // #00ad9f
-  $alert:    rgba(250,216,107,1) !default; // #fad86b
-  $neutral:  rgba(233,233,235,1) !default; // #e9ebeb
-  $utility:  rgba(113,126,131,1) !default; // #717e83
-  $bg:       rgba(244,247,248,1) !default; // #f4f7f8
+  $color-dark:     rgba(14 ,30 ,37 ,1) !default; // #0e1e25
+  $color-pop:      rgba(0  ,173,159,1) !default; // #00ad9f
+  $color-alert:    rgba(250,216,107,1) !default; // #fad86b
+  $color-neutral:  rgba(233,233,235,1) !default; // #e9ebeb
+  $color-utility:  rgba(113,126,131,1) !default; // #717e83
+  $color-bg:       rgba(244,247,248,1) !default; // #f4f7f8
 
 //  Default Color Settings
 //  --------------------------------------------------
-  $body-bg:                 $bg         !default;
-  $default-txt-color:       $white      !default;
-  $placeholder-txt-color:   $neutral    !default;
+  $body-bg:                 $color-bg         !default;
+  $default-txt-color:       $color-white      !default;
+  $placeholder-txt-color:   $color-neutral    !default;
 
-  $hr-color:                $neutral    !default;
-  $highlight:               $pop        !default;
-  $highlight-text:          $white      !default;
+  $highlight:               $color-pop        !default;
+  $highlight-text:          $color-white      !default;
 
 //  Font Families
 //  --------------------------------------------------
@@ -62,12 +61,12 @@
   $headings-font-family:    $font-bold           !default;
   $headings-font-weight:    normal               !default;
   $headings-line-height:    $line-height-base    !default;
-  $headings-font-color:     $white               !default;
+  $headings-font-color:     $color-white               !default;
 
 //  Links
 //  --------------------------------------------------
-  $link-color:              rgba($white, 0.4)   !default;
-  $link-hover-color:        rgba($white, 1)     !default;
+  $link-color:              rgba($color-white, 0.4)   !default;
+  $link-hover-color:        rgba($color-white, 1)     !default;
 
 //  Animation
 //  --------------------------------------------------

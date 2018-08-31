@@ -20,8 +20,8 @@
   }
 
   &--beta {
-    background-color: $alert;
-    color: $dark;
+    background-color: $color-alert;
+    color: $color-dark;
     @include font-line-height-px(12, 16);
   }
 }

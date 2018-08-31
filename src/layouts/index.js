@@ -34,9 +34,7 @@ export default class RawApp extends Component {
           />
           <Header userName="lesliecw" />
           <main className="main container">
-            <div className="main__wrapper">
-              {this.props.children()}
-            </div>
+            {this.props.children()}
           </main>
         </div>
         <Footer />
