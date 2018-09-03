@@ -2,7 +2,7 @@
 
 This repo contains a rough mock-up of a weekly dashboard for [Netlify](https://www.netlify.com/) users. The dashboard provides a quick run-down of the past week's site traffic, number of deploys by site, and noteworthy events.
 
-Check out the [live demo >](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)
+Check out the [live demo >](https://weeklynews.netlify.com/)
 
 
 ## 👩🏻‍💻 Implementation Notes
