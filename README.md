@@ -1,106 +1,69 @@
-<p align="center">
-  <a href="https://next.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Netlify Weekly News
 
-Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. 
+This repo contains a rough mock-up of a weekly dashboard for [Netlify](https://www.netlify.com/) users. The dashboard provides a quick run-down of the past week's site traffic, number of deploys by site, and noteworthy events.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://next.gatsbyjs.org/docs/gatsby-starters/)._
+Check out the [live demo >](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)
 
-## 🚀 Quick start
 
-1.  **Install the Gatsby CLI.**
+## 👩🏻‍💻 Implementation Notes
 
-    The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
+### 🤔 Decision Making:
 
-    ```sh
-    # install the Gatsby CLI globally
-    npm install -g gatsby-cli
-    ```
+- **Charts galore with a mini news feed.**
+Visually representing the statistics make them easier and faster for users to consume. I chose to set up the charts as follows:
 
-2.  **Create a Gatsby site.**
+	- *Line graph for site traffic.* The colored bands of the stacked line graph make it easy to see the site with the most traffic at a glance, while also indicating the relationship of traffic levels between each site.
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+	- *Pie chart for deploy activity.* The date of each deploy was irrelevant here since we were most interested in comparison between the three sites. The pie chart allows us to see how much of the user's total work (deploys) went toward each site.
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter
-    ```
+	- *Text-based news feed.* Unlike the other stats, the easiest way to show noteworthy events by date and site was with text in a familiar "news feed" format.
 
-3.  **Start developing.**
+- **The real thing would have live data, of course.**
+In the real world, the dashboard would be wired up to display data from actual sources (as opposed to the static JSON I mocked up). However, in an effort to make my JSON more similar to a real API, I organized the data in one array of objects that I manipulated to get the dataset needed for each individual display.
 
-    Navigate into your new site’s directory and start it up.
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
 
-4.  **Open the source code and start editing!**
+### 💾 Technology:
 
-    Your site is now running at `http://localhost:8000`!
-    
-    *Note: You'll also see a second link: `http://localhost:8000___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
-    
-    Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-    
-## 🧐 What's inside?
+- **Built on GatsbyJS, the static site generator for React.** While Jekyll or Middleman could have handled the job, I was able to get started in Gatsby more quickly by using my own Gatsby boilerplate, which includes pre-installed plugins, helper files, and stylesheets for painless setup.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- **AmCharts charting library.** Once I decided the best way to display most of the information was through charting, the biggest decision I had to make was what library to use. I ultimately chose [AmCharts](https://www.amcharts.com/javascript-charts/) because it:
+	-  uses SVG instead of HTML5 canvas, which makes for easier implementation of responsiveness and accessibility
+	-  is compatible with all major modern browsers and some older ones
+	-  has a [responsive plugin](https://www.amcharts.com/kbase/making-charts-responsive/) for overriding settings at different breakpoints
+	-  is one of the few charting libraries with [built-in Section 508 compliance](https://www.amcharts.com/accessibility/accessible-charts/); also offers additional features for augmenting and improving accessibility
+	-  straightforward and easy to use with solid documentation, making the charts easier for future developers to work with
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    ├── README.md
-    └── yarn.lock
+	The only downside to AmCharts is that the current stable release for use in React is only partially available on npm, so it required CDN script includes. This library still won out due to its baked-in accessibility and responsiveness, and [AmCharts4](https://www.amcharts.com/v4/), currently in beta, will be fully available on npm.
 
-  1.  **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.  
-  
-  2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. “Src” is a convention for “source code”.
-  
-  3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-  
-  4.  **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
-  
-  5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://next.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-  
-  6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
-  
-  7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-  
-  8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-  
-  9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-  
-  10.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won’t change this file directly).
-  
-  11.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-  
-  12.  **`README.md`**: A text file containing useful reference information about your project.
-  
-  13.  **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm.  This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
 
-## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://next.gatsbyjs.org/). Here are some places to start:
+### ✉️ Email Newsletter
+It would be useful to send a weekly email newsletter containing updates from the Weekly News dashboard. To do this, I would:
 
--   **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://next.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- **Store static images of each user's charts on a server.** First, set up a weekly scheduled server task that would save a static PNG of each user's chart (using the [AmCharts exports add-on](https://www.amcharts.com/kbase/export-charts-advanced/), which allows you to turn each SVG chart into an email-ready image format). The images would be stored at a URL that included differentiation by Netlify username, preferably on a CDN.
 
--   **To dive straight into code samples head [to our documentation](https://next.gatsbyjs.org/docs/).** In particular, check out the “Guides”, API reference, and “Advanced Tutorials” sections in the sidebar.
+- **Send email with dynamic chart images.** In the newsletter template, I would use a mail merge to feed in the dynamic chart images by auto-populating the appropriate Netlify user's username (i.e., http://base.url/${USERNAME}-weekly-news-traffic.png). The image at this URL would auto-update every week thanks to the server task.
 
-## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## ✏️ To Dos
+
+Still on the docket:
+
+-   **Add newsletter sign-up.** Add Netlify form to handle email newsletter signups. Use Zapier or similar service to send form responses to database.
+
+-   **Implement testing.** Install Jest and set up snapshot and unit testing.
+
+-   **Improve accessibility.** While I made tech decisions and wrote markup with accessibility in mind, a full audit is recommended. This would include (but not be limited to):
+	- addition of skip link in main nav
+	- addition of aria attributes (as needed)
+	- complete walk-through with popular screen readers on desktop (Mac and Windows) and mobile devices (iOS and Android) to address weak or confusing areas
+	- ensure best practices, including adding image alt text, checking color contrast, and running the aXe Chrome extension to identify outstanding issues
+
+- **Run full QA.** While I did a cursory browser check in the latest versions of Chrome, Firefox, and Safari, the dashboard should be tested for all modern browsers and devices, including Edge, IE11, and the latest Android stock browsers.
+
+- **Upgrade AmCharts**. Once [AmCharts4](https://www.amcharts.com/v4/) is released as stable, investigate upgrading and remove CDN scripts in favor of an npm package. Switching will simplify dependency management and cut down external script loading time.
+
+- **Clean up JS lists that use `i` for a key.** React doesn't recommend [using indexes for keys](https://reactjs.org/docs/lists-and-keys.html#keys) if the order of items may change. Should check where this may have been overlooked and implement more trustworthy keys.
+
+- **Consider setting up charts as a single React component.** Could pass the config settings to a single chart component as opposed to defining these in individual components. If more than the two existing chart types (line and pie) are expected in the future, combining into a single component would cut down on repetition.

@@ -5,17 +5,17 @@
 //  ==========================================================================
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {colors} from '../helpers'
-
-import {
-  determineTotalDeploysBySite,
-  normalizeDate
-} from '../helpers'
 
 import {
   flatten,
   startCase
 } from 'lodash'
+
+import {
+  colors,
+  determineTotalDeploysBySite,
+  normalizeDate
+} from '../helpers'
 
 import {
   ChartLine,

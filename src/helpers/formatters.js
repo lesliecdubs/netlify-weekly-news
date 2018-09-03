@@ -1,5 +1,4 @@
 const stripLeadingZerosFromDate = date => {
-  console.log(date)
   return date.split('-').reduce((date, datePart) => {
     return date += parseInt(datePart) + '/'
   }, '').slice(0, -1)
